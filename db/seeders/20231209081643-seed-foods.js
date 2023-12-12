@@ -45,7 +45,7 @@ module.exports = {
         {
           image: "https://storage.googleapis.com/culinaryndo/gambar%20makanan/rawon.jpg",
           title: "Rawon",
-          description: "Rawon is a typical Indonesian soup dish originating from East Java, especially the Surabaya and Malang areas. Rawon is made from beef stock cooked with kluwek, resulting in a dark black sauce. Rawon is usually served with thinly sliced ​​beef, bean sprouts, spring onions and white rice.",
+          description: "Rawon is a typical Indonesian soup dish originating from East Java, especially the Surabaya and Malang areas. Rawon is made from beef stock cooked with kluwek, resulting in a dark black sauce. Rawon is usually served with thinly sliced beef, bean sprouts, spring onions and white rice.",
           latitude: "-7.974039990490596",
           longitude: "112.63836387902329",
           createdAt: new Date(),
