@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const cAuth = require("../handlers/users");
+const cAuth = require("../handlers/user");
 
 router.post("/user/register", cAuth.register.register);
 router.post("/user/login", cAuth.login.login);
