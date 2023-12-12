@@ -13,7 +13,7 @@ module.exports = {
      * }], {});
     */
     await queryInterface.bulkInsert(
-      "foods",
+      "Foods",
       [
         {
           image: "https://storage.googleapis.com/culinaryndo/gambar%20makanan/soto.jpg",
@@ -111,6 +111,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('users', null, {});
+    await queryInterface.bulkDelete('Foods', null, {});
   }
 };
