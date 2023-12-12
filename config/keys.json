@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "culinaryndo7",
+  "private_key_id": "8e593cfe24fd5b422120b72e1a493b95a73fc980",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDCgn8cbLKZathF\nUd4b/rIexfoqnDVm2YBaGV+NWhuxlGHPBEyfeRgjwcIj9KhcEYoR0/+q40dKsEkU\neZZOGHYF6afEnyUa7pHe7Lqy4ukEAh7m5N8XxJH34yRpeWKGlqGoXOFuVoK8IraR\nPy3WCSkdC53RL0mb6nnbR2P+UwXYuS7Omw3ImC3tu4ABXJIrtQEfkc5nWnejWMvw\nJXqBS6WLhhGn7fgia16Mry18DDw/ZiPMxoM19MsFgyN+lorcZFwuFAnKrX7U9OFu\nxfJXxOoBEkttXxLo/yvu3qNoH7BpxP8/9a/W9vt5JaZ+4rqWVFmsdgWJ/OkNogrS\ne4WHqTiZAgMBAAECgf8zcBv6G5GGANT9f/W81+rca7HWLHkmBpIEdOSDMDeJC2ef\nCp2fKE1TjdBJfrag1ZwttGKbgbJyWsXFishOeFy9zSZD8p73AFNf7W3YelyLMtEs\ncY1aoiErIAABF8vcy8XBQGhdRYOAcHpw7sRJ74ijDCKWfAR7UKBPdngUsBMoiVny\nbQt+lXz9GI/jFLHoaiZtb2rJDPt3CBPAjh8Y5wHgGpCDpLiRwoabt1zj2NgeL3xa\nbaoD+VVpS5TAyDXB6dx2EsLRovUSD0GZ5dDcExl5uvOm7JpkQUfEwrjITRtol65M\nWG1cCJQSxhPGSSk4xQhgfabDiYTmtKPDpY82zUECgYEA8Y5ct6oOuwjkr3HFpjWq\nRJLuuoiI0rGhfFzo7YrYkNaTyMBhqSoNv5kqlNzOezunhcTqrVB/Qwd8/IUKLIGE\nHxiTdbDklWD5Ia/6mB+wku4WEafCvA3u4JLXP8CJ/yTj0S8x6biPI6mM9EghEYVw\n43gatfjiTvTNjD1/di3dfUkCgYEAziP4CIYJtAmUEgsUJ18g09WsXMX7vXbEw7mv\nOfO2X0jBu2mZCDWyV5p/CIcAvoAKOzCk8JQD51bHCCm2GoTCrFoxdqKuJ3Dk9Zbi\nu4/X/gWjQokzAhe5ba5O5NC3Aidi6+0ezyzsbSZfBxzOASTQWUozHvVakmObnnWm\ngtTWcNECgYEAywod9yeTcDVee/ZG65mqQC+9SL+hOnCiy3UROTH/LWegGxtSO64k\nlks5lp0vVjhjbLaDiCDkh8QQk/WEArrvAnBW6pNA4Cr93gocuqfQdQB5Pmfj8MxJ\nYS0sjuLZW8R3Vgq0ir9eWdyXpXHHkgG3TQxUb2b/Wty8tcevjveoeDkCgYAHdGGJ\n3V8Idbg3FtN5wQTs5DNBf59k8KCY+2QM0nVr6LOo1V7FXzu900Z4xnkOao70KQQt\n9wxVF1xHPUrqlpZ7qR9UzPlDT9/XyccVRVRoSUfoJhIEJ1t7TexodevIVihLo92T\nXGqIX/TbyvzgKbanI/nJStIlrRh5mIOXA59loQKBgQCvoomAWdu3VNkO2RNKTQZP\n3bpIY3sSP681wYjezya3gCGt40UvhNBe2L9D294l/sCu+uGfcwYA/3U/yXf3ak9k\nA3e6dLRDA8EUVH7RUq5hQf7yp4GSJHt7jicD9lD+ZDHqIVfwpJTqia9hhdKeWq8r\nGRSFBBnL9IkP9VJ1vAwFaA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "culinaryndo@culinaryndo7.iam.gserviceaccount.com",
+  "client_id": "102321176220185192944",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/culinaryndo%40culinaryndo7.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
