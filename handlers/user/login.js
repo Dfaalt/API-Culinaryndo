@@ -39,7 +39,12 @@ module.exports = {
     return res.status(200).json({
         status: true,
         message: "login successful",
-        data: { payload },
+        data: {
+            id: findUser.id,
+            email: findUser.email,
+            fullname: findUser.fullname,
+            username: findUser.username,
+        },
         token,
     });
     } catch (error) {
