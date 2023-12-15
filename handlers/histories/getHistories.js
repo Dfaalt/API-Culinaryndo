@@ -18,16 +18,22 @@ module.exports = {
         const histories = await Histories.findAll({
         where: { userId },
         include: [{
-        model: Foods,
-        as: 'foods' // Menggunakan alias yang sesuai dengan asosiasi
-        }]
+            model: Foods,
+            as: 'foods' // Menggunakan alias yang sesuai dengan asosiasi
+          }]
         });
 
+        // Mengubah data menjadi format yang termasuk id bookmark dan data makanan
+        const formattedBookmarks = histories.map(history => ({
+          historyId: history.id, // Menambahkan id history
+          foods: history.foods
+        }));
+
         return res.status(200).json({
-        status: true,
-        message: "Histories foods fetched successfully",
-        data: histories.map(history => history.foods),
-        });
+            status: true,
+            message: "Histories foods fetched successfully",
+            data: formattedBookmarks,
+          });
         }catch (error) {
         next(error);
         }
