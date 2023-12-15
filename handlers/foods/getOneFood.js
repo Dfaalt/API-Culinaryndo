@@ -1,22 +1,22 @@
-const { User } = require("../../models");
+const { Foods } = require("../../models");
 
 module.exports = {
-    getOne : async(req,res,next) => {
+    getOneFood : async(req,res,next) => {
         try {
             const { id } = req.params;
-            const findUser = await User.findOne({ where: {id} });
+            const findFood = await Foods.findOne({ where: {id} });
 
-            if(!findUser) {
+            if(!findFood) {
                 return res.status(404).json({
                     status: false,
-                    message: "data not found",
+                    message: "food not found",
                 });
             }
 
             return res.status(200).json({
                 status: true,
-                message: "get one data successful",
-                data: findUser,
+                message: "get food successful",
+                data: findFood,
             });
         } catch (error) {
             next(error)
