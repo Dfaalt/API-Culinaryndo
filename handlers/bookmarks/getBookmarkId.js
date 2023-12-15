@@ -45,7 +45,8 @@ module.exports = {
             return res.status(200).json({
                 status: true,
                 message: "Bookmarked food fetched successfully",
-                data: bookmarks.foods,
+                bookmarkId: bookmarks.id,
+                data: bookmarks.foods
             });
         } catch (error) {
             next(error);
