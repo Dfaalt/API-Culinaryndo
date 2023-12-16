@@ -1,4 +1,5 @@
-const { User } = require("../../models");
+/* eslint-disable consistent-return */
+const { User } = require('../../models');
 
 module.exports = {
   getAll: async (req, res, next) => {
@@ -8,13 +9,13 @@ module.exports = {
       if (!findUser) {
         return res.status(404).json({
           status: false,
-          message: "data not found",
+          message: 'data not found',
         });
       }
 
       return res.status(200).json({
         status: true,
-        message: "get all data successful",
+        message: 'get all data successful',
         data: findUser,
       });
     } catch (error) {

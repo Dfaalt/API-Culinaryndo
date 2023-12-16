@@ -1,54 +1,56 @@
-require("dotenv").config();
-const { User } = require("../../models");
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
+require('dotenv').config();
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const { User } = require('../../models');
+
 const { JWT_SECRET } = process.env;
 
 module.exports = {
-    login: async (req, res, next) => {
+  // eslint-disable-next-line consistent-return
+  login: async (req, res, next) => {
     try {
-        const { email, password } = req.body;
+      const { email, password } = req.body;
 
-        const findUser = await User.findOne({ where: { email } });
+      const findUser = await User.findOne({ where: { email } });
 
-    if (!findUser) {
+      if (!findUser) {
         return res.status(404).json({
-            status: false,
-            message: "email or password isn't correct",
+          status: false,
+          message: "email or password isn't correct",
         });
-    }
+      }
 
-    const comparePassword = await bcrypt.compare(password, findUser.password);
+      const comparePassword = await bcrypt.compare(password, findUser.password);
 
-    if (!comparePassword) {
+      if (!comparePassword) {
         return res.status(401).json({
-            status: false,
-            message: "email or password isn't correct",
+          status: false,
+          message: "email or password isn't correct",
         });
-    }
+      }
 
-    const payload = {
+      const payload = {
         id: findUser.id,
         email: findUser.email,
         fullname: findUser.fullname,
         username: findUser.username,
-    };
+      };
 
-    const token = jwt.sign(payload, JWT_SECRET);
+      const token = jwt.sign(payload, JWT_SECRET);
 
-    return res.status(200).json({
+      return res.status(200).json({
         status: true,
-        message: "login successful",
+        message: 'login successful',
         data: {
-            id: findUser.id,
-            email: findUser.email,
-            fullname: findUser.fullname,
-            username: findUser.username,
+          id: findUser.id,
+          email: findUser.email,
+          fullname: findUser.fullname,
+          username: findUser.username,
         },
         token,
-    });
+      });
     } catch (error) {
-        next(error);
+      next(error);
     }
   },
 };

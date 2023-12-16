@@ -1,16 +1,19 @@
-const { User } = require("../../models");
-const bcrypt = require("bcrypt");
+const bcrypt = require('bcrypt');
+const { User } = require('../../models');
 
 module.exports = {
+  // eslint-disable-next-line consistent-return
   register: async (req, res, next) => {
     try {
-      const { fullname, username, email, password } = req.body;
+      const {
+        fullname, username, email, password,
+      } = req.body;
 
       const findFullname = await User.findOne({ where: { fullname } });
       if (findFullname) {
         return res.status(409).json({
           status: false,
-          message: "fullname already exist",
+          message: 'fullname already exist',
           data: null,
         });
       }
@@ -18,7 +21,7 @@ module.exports = {
       if (findEmail) {
         return res.status(409).json({
           status: false,
-          message: "user with email already exist",
+          message: 'user with email already exist',
           data: null,
         });
       }
@@ -27,7 +30,7 @@ module.exports = {
       if (findUser) {
         return res.status(409).json({
           status: false,
-          message: "username already exist",
+          message: 'username already exist',
           data: null,
         });
       }
@@ -35,7 +38,7 @@ module.exports = {
       if (password.length < 8) {
         return res.status(400).json({
           status: false,
-          message: "password less than 8 characters",
+          message: 'password less than 8 characters',
           data: null,
         });
       }
@@ -51,7 +54,7 @@ module.exports = {
 
       return res.status(201).json({
         status: true,
-        message: "create data user successful",
+        message: 'create data user successful',
         data: {
           id: created.id,
           fullname: created.fullname,

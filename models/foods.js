@@ -1,7 +1,7 @@
-'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Foods extends Model {
     /**
@@ -11,12 +11,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Foods.hasMany(models.Bookmarks, {
-        foreignKey: "foodsId",
-        as: "bookmarks",
+        foreignKey: 'foodsId',
+        as: 'bookmarks',
       });
       Foods.hasMany(models.Histories, {
-        foreignKey: "foodsId",
-        as: "histories",
+        foreignKey: 'foodsId',
+        as: 'histories',
       });
     }
   }
@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     description: DataTypes.TEXT,
     latitude: DataTypes.FLOAT,
-    longitude: DataTypes.FLOAT
+    longitude: DataTypes.FLOAT,
   }, {
     sequelize,
     modelName: 'Foods',

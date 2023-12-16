@@ -1,27 +1,27 @@
-'use strict';
-
-const bcrypt = require("bcrypt");
+const bcrypt = require('bcrypt');
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
+  // eslint-disable-next-line no-unused-vars
+  async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert(
-      "Users",
+      'Users',
       [
         {
-          fullname: "Light",
-          username: "Dark",
-          email: "darknotlight@gmail.com",
-          password: bcrypt.hashSync("lights", 10),
+          fullname: 'Light',
+          username: 'Dark',
+          email: 'darknotlight@gmail.com',
+          password: bcrypt.hashSync('lights', 10),
           createdAt: new Date(),
           updatedAt: new Date(),
         },
       ],
-      {}
+      {},
     );
   },
 
-  async down (queryInterface, Sequelize) {
+  // eslint-disable-next-line no-unused-vars
+  async down(queryInterface, Sequelize) {
     await queryInterface.bulkDelete('Users', null, {});
-  }
+  },
 };

@@ -1,28 +1,29 @@
-const { User } = require("../../models");
+const { User } = require('../../models');
 
 module.exports = {
-    destroy: async(req, res, next) => {
-        try {
-            const {id} = req.params;
+  // eslint-disable-next-line consistent-return
+  destroy: async (req, res, next) => {
+    try {
+      const { id } = req.params;
 
-            const findUser = await User.findOne({ where: {id} });
+      const findUser = await User.findOne({ where: { id } });
 
-            if (!findUser) {
-                return res.status(404).json({
-                    status: false,
-                    message: "data not found",
-                });
-            }
+      if (!findUser) {
+        return res.status(404).json({
+          status: false,
+          message: 'data not found',
+        });
+      }
 
-            const deleted = await User.destroy({ where: { id } });
+      const deleted = await User.destroy({ where: { id } });
 
-            return res.status(200).json({
-                status: true,
-                message: "delete data succesful",
-                data: deleted,
-            });
-        } catch (error) {
-            next(error)
-        }
+      return res.status(200).json({
+        status: true,
+        message: 'delete data succesful',
+        data: deleted,
+      });
+    } catch (error) {
+      next(error);
     }
-}
+  },
+};

@@ -1,6 +1,7 @@
-const { Foods } = require("../../models");
+const { Foods } = require('../../models');
 
 module.exports = {
+  // eslint-disable-next-line consistent-return
   getFoods: async (req, res, next) => {
     try {
       const foods = await Foods.findAll();
@@ -8,14 +9,14 @@ module.exports = {
       if (!foods) {
         return res.status(404).json({
           status: false,
-          message: "food not found",
+          message: 'food not found',
         });
       }
 
       return res.status(200).json({
         status: true,
-        message: "Fetched all food items successfully",
-        data: foods
+        message: 'Fetched all food items successfully',
+        data: foods,
       });
     } catch (error) {
       next(error);

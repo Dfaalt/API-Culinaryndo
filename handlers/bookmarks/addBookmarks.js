@@ -1,11 +1,12 @@
-const { Bookmarks, Foods, User } = require("../../models");
+const { Bookmarks, Foods, User } = require('../../models');
 
 // Add a bookmark
 module.exports = {
+  // eslint-disable-next-line consistent-return
   addBookmark: async (req, res, next) => {
     try {
       const { foodsId } = req.body;
-      const { userId } = req.params; // Mengambil userId dari parameter URL
+      const { userId } = req.params;
 
       // Periksa apakah foodsId ada dalam database
       const food = await Foods.findOne({ where: { id: foodsId } });
@@ -13,7 +14,7 @@ module.exports = {
       if (!food) {
         return res.status(404).json({
           status: false,
-          message: "food not found",
+          message: 'food not found',
         });
       }
 
@@ -23,7 +24,7 @@ module.exports = {
       if (!user) {
         return res.status(404).json({
           status: false,
-          message: "User not found",
+          message: 'User not found',
         });
       }
 
@@ -33,7 +34,7 @@ module.exports = {
       if (existingBookmark) {
         return res.status(409).json({
           status: false,
-          message: "Bookmark already exists",
+          message: 'Bookmark already exists',
         });
       }
 
@@ -42,7 +43,7 @@ module.exports = {
 
       return res.status(201).json({
         status: true,
-        message: "Bookmark added successfully",
+        message: 'Bookmark added successfully',
         data: bookmark,
       });
     } catch (error) {

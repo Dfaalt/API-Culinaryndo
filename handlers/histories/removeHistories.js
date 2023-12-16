@@ -1,7 +1,9 @@
-const { Histories, Foods, User } = require("../../models");
+// eslint-disable-next-line no-unused-vars
+const { Histories, Foods, User } = require('../../models');
 
 // Remove a history
 module.exports = {
+  // eslint-disable-next-line consistent-return
   removeHistory: async (req, res, next) => {
     try {
       const { historyId, userId } = req.params;
@@ -11,7 +13,7 @@ module.exports = {
       if (!history) {
         return res.status(404).json({
           status: false,
-          message: "history not found",
+          message: 'history not found',
         });
       }
 
@@ -20,7 +22,7 @@ module.exports = {
 
       return res.status(200).json({
         status: true,
-        message: "history removed successfully",
+        message: 'history removed successfully',
       });
     } catch (error) {
       next(error);

@@ -1,9 +1,9 @@
-const util = require('util')
-const gc = require('../config')
-const bucket = gc.bucket('culinaryndo')
+const util = require('util');
 const crypto = require('crypto');
+const gc = require('../config');
 
-const { format } = util
+const bucket = gc.bucket('culinaryndo');
+const { format } = util;
 
 /**
  *
@@ -17,6 +17,7 @@ const { format } = util
 const uploadImage = (file) => new Promise((resolve, reject) => {
   // Error handling for undefined file
   if (!file || !file.originalname || !file.buffer) {
+    // eslint-disable-next-line prefer-promise-reject-errors
     reject('File is undefined or missing required properties');
     return;
   }
@@ -26,23 +27,24 @@ const uploadImage = (file) => new Promise((resolve, reject) => {
   // Menghasilkan hash dari nama file
   const hash = crypto.createHash('sha256').update(originalname).digest('hex');
   // Menggabungkan hash dengan ekstensi file asli
-  const hashedFilename = `${hash}${originalname.substring(originalname.lastIndexOf('.'))}`.replace(/ /g, "_");
+  const hashedFilename = `${hash}${originalname.substring(originalname.lastIndexOf('.'))}`.replace(/ /g, '_');
 
   const blob = bucket.file(hashedFilename);
   const blobStream = blob.createWriteStream({
-    resumable: false
+    resumable: false,
   });
 
   blobStream.on('finish', () => {
     const publicUrl = format(
-      `https://storage.googleapis.com/${bucket.name}/${blob.name}`
+      `https://storage.googleapis.com/${bucket.name}/${blob.name}`,
     );
     resolve(publicUrl);
   })
-  .on('error', (err) => {
-    reject(`Unable to upload image, something went wrong: ${err.message}`);
-  })
-  .end(buffer);
+    .on('error', (err) => {
+      // eslint-disable-next-line prefer-promise-reject-errors
+      reject(`Unable to upload image, something went wrong: ${err.message}`);
+    })
+    .end(buffer);
 });
 
 module.exports = uploadImage;

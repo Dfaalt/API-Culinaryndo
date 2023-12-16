@@ -1,7 +1,8 @@
-const { Bookmarks, Foods } = require("../../models");
+// eslint-disable-next-line no-unused-vars
+const { Bookmarks, Foods } = require('../../models');
 
-// Remove a bookmark
 module.exports = {
+  // eslint-disable-next-line consistent-return
   removeBookmark: async (req, res, next) => {
     try {
       const { bookmarkId, userId } = req.params;
@@ -11,7 +12,7 @@ module.exports = {
       if (!bookmark) {
         return res.status(404).json({
           status: false,
-          message: "Bookmark not found",
+          message: 'Bookmark not found',
         });
       }
 
@@ -20,7 +21,7 @@ module.exports = {
 
       return res.status(200).json({
         status: true,
-        message: "Bookmark removed successfully",
+        message: 'Bookmark removed successfully',
       });
     } catch (error) {
       next(error);
