@@ -27,6 +27,8 @@ module.exports = {
       // Mengubah data menjadi format yang termasuk id bookmark dan data makanan
       const formattedBookmarks = bookmarks.map((bookmark) => ({
         bookmarkId: bookmark.id, // Menambahkan id bookmark
+        createdAt: bookmark.createdAt, // Menambahkan createdAt
+        updatedAt: bookmark.updatedAt, // Menambahkan updatedAt
         foods: bookmark.foods,
       }));
 

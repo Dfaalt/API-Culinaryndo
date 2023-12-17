@@ -46,6 +46,8 @@ module.exports = {
         status: true,
         message: 'Bookmarked food fetched successfully',
         bookmarkId: bookmarks.id,
+        createdAt: bookmarks.createdAt, // Menambahkan createdAt
+        updatedAt: bookmarks.updatedAt, // Menambahkan updatedAt
         data: bookmarks.foods,
       });
     } catch (error) {
