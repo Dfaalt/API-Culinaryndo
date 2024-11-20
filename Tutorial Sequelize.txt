@@ -1,0 +1,62 @@
+npm init -y
+
+npm install express dotenv cors morgan sequelize sequelize-cli mysql2
+
+touch app.js .env .gitignore
+
+npm i nodemon --save-dev
+
+//install file .sequelizerc
+npx sequelize-cli init
+
+// edit config.js
+
+//setting .env
+
+// create db
+npx sequelize-cli db:create
+
+// remove db
+npx sequelize-cli db:drop
+
+// create model atau tabel
+npx sequelize-cli model:create --name Data --attributes tag:string
+
+//setting migration & user.js
+
+// migration to db
+npx sequelize-cli db:migrate
+npx sequelize-cli db:migrate:undo:all
+
+// buat seeders 
+npx sequelize-cli seed:generate --name seed-data
+
+// seeders to db
+npx sequelize-cli db:seed:all
+npx sequelize-cli db:seed:undo
+
+// buat folder routes dan controllers/handlers
+mkdir handlers routes
+
+// buat file routes
+touch routes/index.js
+
+//edit routes/index.js
+
+// make file in handlers
+mkdir handlers/data
+ 
+touch handlers/index.js handlers/getOne.js handlers/getAll.js
+
+// edit handlers/..
+
+// edit index.js
+
+//deploy to GCP
+gcloud init
+git clone <link repositorynya>
+open editor
+buat file .env, masukan credential .env
+gcloud app deploy
+
+

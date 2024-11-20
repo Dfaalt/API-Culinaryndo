@@ -135,6 +135,8 @@ gcloud init
 git clone <link repositorynya>
 open editor
 buat file .env, masukan credential .env
+gcloud app deploy
+
 
 "start": "node app.js",
 
